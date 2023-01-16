@@ -12,7 +12,11 @@ function invocarCallback(cb) {
    // Invoca/ejecuta el callback `cb`.
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
+<<<<<<< HEAD
    console.log(cb)
+=======
+   return cb()
+>>>>>>> 21377d2f151228efde906038ff591cd0a7e128a1
 }
 
 function operacionMatematica(num1, num2, cb) {
@@ -20,6 +24,7 @@ function operacionMatematica(num1, num2, cb) {
    // El callback realiza una operación matemática, por lo que necesita de los dos números.
    // Retorna el resultado del callback pasándole como parámetros los números.
    // Tu código:
+   return cb(num1, num2)
 }
 
 function sumarArray(arrayOfNumbers, cb) {
@@ -28,6 +33,10 @@ function sumarArray(arrayOfNumbers, cb) {
    // Este resultado debes pasárselo como argumento al callback recibido.
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
+   var sumar = arrayOfNumbers.reduce(function(acumulador, elemento){
+      return acumulador + elemento;
+   },0)  
+   cb(sumar)
 }
 
 function forEach(array, cb) {
@@ -35,6 +44,9 @@ function forEach(array, cb) {
    // Debes iterar sobre el arreglo, y por cada elemento ejecutar el callback.
    // Debes pasarle el elemento como argumento al callback.
    // Tu código:
+   array.forEach(function(elemento, indice){
+      return cb(elemento);
+   })
 }
 
 function map(array, cb) {
@@ -42,12 +54,21 @@ function map(array, cb) {
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
+   var nuevoarray = array.map(function(x){
+      return cb(x);
+      
+   })
+   return nuevoarray;
 }
 
 function filter(arrayOfStrings) {
    // Debes identificar todos los elementos el arreglo que comiencen con la letra "a".
    // Luego retorna un nuevo arreglo con estos elementos.
    // Tu código:
+   var arregloA = arrayOfStrings.filter (word => word.charAt(0) ==="a");
+   return arregloA;
+
+      
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
