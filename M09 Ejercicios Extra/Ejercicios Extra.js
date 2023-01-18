@@ -6,6 +6,9 @@ function deObjetoAarray(objeto) {
    // Estos elementos debe ser cada par clave:valor del objeto recibido.
    // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
    // Tu código:
+   var onjeto = Object.entries(objeto);
+   
+   return onjeto;
 }
 
 function numberOfCharacters(string) {
@@ -14,7 +17,23 @@ function numberOfCharacters(string) {
    // Las letras deben estar en orden alfabético.
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
    // Tu código:
+   var objeto = {}
+
+  
+  for(i = 0 ; i < string.length ; i++) {
+      
+  objeto[string.charAt(i)] = 0;
+
+  }
+  for(i = 0 ; i < string.length ; i++) {
+      
+    objeto[string.charAt(i)] = objeto[string.charAt(i)] + 1 ;
+  
+    }
+    return objeto
 }
+   
+
 
 function capToFront(string) {
    // Recibes un string con algunas letras en mayúscula y otras en minúscula.
@@ -22,6 +41,16 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+   var C = ""
+   var M = ""
+   for(var i = 0; i < string.length;i++){
+      if ((string[i].toUpperCase()) === string[i]){
+         C += (string[i]);
+      } else if(string[i].toLowerCase()=== string[i]){
+         M += string[i];
+      }
+      }
+   return C + M
 }
 
 function asAmirror(frase) {
@@ -29,6 +58,13 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+   var vesre = []
+   frase.split(", ");
+   for (var i = 0; i < frase.length; i++){
+      for (var c = frase[i].length -1; c >=0; c--){
+         vesre.unshift;
+      }
+   }return vesre;
 }
 
 function capicua(numero) {
