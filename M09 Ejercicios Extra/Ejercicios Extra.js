@@ -54,29 +54,45 @@ function capToFront(string) {
 }
 
 function asAmirror(frase) {
+//vesre[0] > hola
+//reves = hola 
    // Recibes una frase. Tu tarea es retornar un nuevo string en el que el orden de las palabras sea el mismo.
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
-   var vesre = []
-   frase.split(", ");
-   for (var i = 0; i < frase.length; i++){
-      for (var c = frase[i].length -1; c >=0; c--){
-         vesre.unshift;
-      }
-   }return vesre;
+   var acum = []
+   var vesre = frase.split(" ")
+  acum = vesre.map(function(x){
+   return x.split('').reverse().join('')
+  })
+  return acum.join(' ');
 }
 
 function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   var num = numero.toString().split("")
+   if (numero == num.reverse().join('')){
+         return "Es capicua";
+      }else{
+         return "No es capicua";
+      }
+   
 }
 
 function deleteAbc(string) {
    // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.
    // Retorna el string sin estas letras.
    // Tu código:
+   
+   var str = ""
+   for(var i =0; i < string.length; i++){
+      if (string[i] !== "a" && string[i] !== "b" && string[i] !=="c"){
+         str += string[i]
+      }
+   }
+   return str
 }
 
 function sortArray(arrayOfStrings) {
@@ -85,6 +101,10 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
+   var array = arrayOfStrings.sort(function(a, b){
+      return a.length - b.length;
+   })
+   return array;
 }
 
 function buscoInterseccion(array1, array2) {
@@ -94,6 +114,16 @@ function buscoInterseccion(array1, array2) {
    // Si no tienen elementos en común, retornar un arreglo vacío.
    // [PISTA]: los arreglos no necesariamente tienen la misma longitud.
    // Tu código:
+   var iguales =[]
+   for( var i = 0; i < array1.length;i++){
+      for (var h = 0;h < array2.length; h++){
+         if (array1[i] === array2[h]){
+            iguales.push(array1[i])
+         }
+      }
+
+   }
+   return iguales;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
